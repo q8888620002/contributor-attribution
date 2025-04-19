@@ -233,7 +233,11 @@
               <em>Figure: Contributor attribution performance measured by LDS (%), evaluated at \(\alpha = 0.5\). Our method (sparsified-FT Shapley) achieves the highest LDS across all datasets. Error bars indicate 95% confidence intervals over three runs.</em>
             </p>
           </div>
-          
+
+
+          <p>
+            <strong>Figure 2</strong> highlights how our method compares under realistic computational constraints. Given the same budget (defined as the time required to retrain and evaluate one full model), sparsified fine-tuning achieves significantly better LDS performance than standard fine-tuning or full retraining. This demonstrates that sparsified-FT enables broader coverage of the Shapley sampling space, resulting in more faithful contributor valuation under limited resources.
+          </p>
           <!-- EFFICIENCY VS ACCURACY -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
             <img src="static/images/lds_evaluation.jpg" alt="LDS vs Budget"
@@ -242,7 +246,10 @@
               <em>Figure: LDS (%) as a function of computational budget. Sparsified-FT Shapley achieves the best attribution performance under limited compute, outperforming both fine-tuning and full retraining.</em>
             </p>
           </div>
-          
+
+          <p>
+            <strong>Figure 3</strong> presents a counterfactual evaluation that measures the causal effect of contributor subsets on model performance. We compare model outputs after removing or retaining top contributors ranked by different attribution methods. Models trained without top contributors (top row) show degraded quality or diversity, while models trained using only the top contributors (bottom row) perform better across global properties. Our method leads to the strongest effect sizes in both directions, confirming it identifies the most impactful training data.
+          </p>
           <!-- COUNTERFACTUAL IMPACT -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
             <img src="static/images/counterfactual_results.jpg" alt="Counterfactual Attribution Results"

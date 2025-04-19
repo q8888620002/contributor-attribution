@@ -119,9 +119,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-
-         As diffusion models are deployed in real-world settings, and their performance is driven by training data, appraising the contribution of data contributors is crucial to creating incentives for sharing quality data and to implementing policies for data compensation. 
+          <p> As diffusion models are deployed in real-world settings, and their performance is driven by training data, appraising the contribution of data contributors is crucial to creating incentives for sharing quality data and to implementing policies for data compensation. 
             Depending on the use case, model performance corresponds to various global properties of the distribution learned by a diffusion model (e.g., overall aesthetic quality). 
             Hence, here we address the problem of attributing global properties of diffusion models to data contributors. The Shapley value provides a principled approach to valuation by uniquely satisfying game-theoretic axioms of fairness. 
             However, estimating Shapley values for diffusion models is computationally impractical because it requires retraining on many training data subsets corresponding to different contributors and rerunning inference. We introduce a method to efficiently retrain and rerun inference for Shapley value estimation, by leveraging model pruning and fine-tuning. 
@@ -144,7 +142,10 @@
         <!-- Your image here -->
         <img src="static/images/concept_fig_updated.pdf" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Schematic overview of our proposed framework, where $\theta^*$ denotes a trained diffusion model for which we aim to credit data contributors, and $\Tilde{\theta}^*$ denotes the pruned model that approximates $\theta^*$. After fine-tuning the pruned model on data corresponding to various subsets of contributors, denoted as $\Tilde{\theta}^{\text{ft}}$, and rerunning inference; global model properties ($\mathcal{F}$) are measured to estimate the Shapley value for each data contributor.
+        **Schematic overview of our proposed framework.** 
+          Let \(\theta^*\) denote a trained diffusion model for which we aim to credit data contributors, and \(\tilde{\theta}^*\) represent a pruned model that approximates \(\theta^*\). 
+          After fine-tuning the pruned model on data corresponding to various subsets of contributors (resulting in \(\tilde{\theta}^{\text{ft}}\)), we re-run inference and evaluate global model properties, denoted by \(\mathcal{F}\). 
+          These measurements are then used to estimate the Shapley value for each data contributor.        
         </h2>
       </div>
   </div>
@@ -155,60 +156,6 @@
 
 
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
 
 
 

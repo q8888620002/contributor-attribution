@@ -168,7 +168,6 @@
   </div>
 </section>
 
-<!-- End image carousel -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -176,18 +175,27 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            We propose a scalable framework for estimating Shapley values to quantify the contribution of training data to diffusion models. Rather than retraining a full model for each subset, we introduce <strong>sparsified fine-tuning</strong>: a pretrained model is pruned to form a sparse proxy, which is then fine-tuned on subsets sampled from the Shapley distribution. Inference is performed on each fine-tuned model to evaluate global properties, enabling efficient Shapley value estimation.
+            We propose a scalable framework for estimating Shapley values to quantify the contribution of training data to diffusion models. Instead of retraining a full model for each subset, we introduce <strong>sparsified fine-tuning</strong>: a pretrained model is pruned to create a sparse proxy, which is then fine-tuned on subsets sampled from the Shapley distribution. Global properties are evaluated via inference to approximate full retraining:
           </p>
-          <p>
-            We further show that this procedure yields a bounded approximation error. Specifically, let \(\beta^*\) denote the true Shapley value vector and \(\tilde{\beta}_k^{\mathrm{ft}}\) its estimate using sparsified fine-tuned models after \(k\) steps. Then:
-          </p>
-          <p style="text-align: center;">
+
+          <p style="text-align: center; margin: 1.5rem 0;">
             \[
-            \mathbb{E} \left[ \left\| \tilde{\beta}_k^{\mathrm{ft}} - \beta^* \right\|_2 \right] \leq 2 \sqrt{n} C \quad \text{as } k \to \infty,
+              \mathcal{F}(\tilde{\theta}^{\mathrm{ft}}_{S_j, k}) \approx \mathcal{F}(\theta^*_{S_j}),
             \]
           </p>
+
           <p>
-            where \(n\) is the number of contributors and \(C\) is a constant reflecting smoothness and loss properties. This result provides theoretical justification for using fine-tuned sparse models in place of full retraining. For details, see <a href="https://arxiv.org/pdf/2407.03153" target="_blank">Appendix A</a>.
+            where \(\theta^*_{S_j}\) is a model retrained on subset \(S_j\), and \(\tilde{\theta}^{\mathrm{ft}}_{S_j, k}\) is the corresponding fine-tuned sparse model after \(k\) steps. We provide a formal guarantee that the Shapley estimate remains close to the ground truth. Let \(\beta^*\) denote the true Shapley value vector, and \(\tilde{\beta}^{\mathrm{ft}}_k\) be its approximation. Then:
+          </p>
+
+          <p style="text-align: center; margin: 1.5rem 0;">
+            \[
+              \mathbb{E} \left[ \left\| \tilde{\beta}_k^{\mathrm{ft}} - \beta^* \right\|_2 \right] \leq 2 \sqrt{n} C \quad \text{as } k \to \infty,
+            \]
+          </p>
+
+          <p>
+            where \(n\) is the number of contributors and \(C\) is a constant depending on the model's Lipschitz properties. This result justifies using sparsified fine-tuning in place of expensive full retraining. See <a href="https://arxiv.org/pdf/2407.03153" target="_blank">Appendix A</a> for details.
           </p>
         </div>
       </div>

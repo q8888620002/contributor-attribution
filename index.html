@@ -175,7 +175,7 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            We propose a scalable framework for estimating Shapley values to quantify the contribution of training data to diffusion models. Instead of retraining a full model for each subset, we introduce <strong>sparsified fine-tuning</strong>: a pretrained model is pruned to create a sparse proxy, which is then fine-tuned on subsets sampled from the Shapley distribution. Global properties are evaluated via inference to approximate full retraining:
+            We propose a scalable framework for estimating Shapley values to quantify the contribution of training data contributors to diffusion models. Instead of retraining a full model for each subset, we introduce <strong>sparsified fine-tuning</strong>: a pretrained model is pruned to create a sparse proxy, which is then fine-tuned on subsets sampled from the Shapley distribution. Global properties are evaluated via inference to approximate full retraining:
           </p>
 
           <p style="text-align: center; margin: 1.5rem 0;">
@@ -185,7 +185,7 @@
           </p>
 
           <p>
-            where \(\theta^*_{S_j}\) is a model retrained on subset \(S_j\), and \(\tilde{\theta}^{\mathrm{ft}}_{S_j, k}\) is the corresponding fine-tuned sparse model after \(k\) steps. We provide a formal guarantee that the Shapley estimate remains close to the ground truth. Let \(\beta^*\) denote the true Shapley value vector, and \(\tilde{\beta}^{\mathrm{ft}}_k\) be its approximation. Then:
+            where \(\theta^*_{S_j}\) is a model retrained on subset \(S_j\), and \(\tilde{\theta}^{\mathrm{ft}}_{S_j, k}\) is the corresponding fine-tuned sparse model after \(k\) steps. We provide a formal guarantee that the Shapley estimate remains close to the ground truth. Let \(\beta^*\) denote the true Shapley value, and \(\tilde{\beta}^{\mathrm{ft}}_k\) be its approximation. Then:
           </p>
 
           <p style="text-align: center; margin: 1.5rem 0;">

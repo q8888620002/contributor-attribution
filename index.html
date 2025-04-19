@@ -138,27 +138,34 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/concept_fig.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-        **Schematic overview of our proposed framework.** 
-          Let \(\theta^*\) denote a trained diffusion model for which we aim to credit data contributors, and \(\tilde{\theta}^*\) represent a pruned model that approximates \(\theta^*\). 
-          After fine-tuning the pruned model on data corresponding to various subsets of contributors (resulting in \(\tilde{\theta}^{\text{ft}}\)), we re-run inference and evaluate global model properties, denoted by \(\mathcal{F}\). 
-          These measurements are then used to estimate the Shapley value for each data contributor.        
-        </h2>
+
+        <!-- Schematic Figure -->
+        <div class="item">
+          <figure class="image" style="margin: 0 auto; max-width: 80%;">
+            <img src="static/images/concept_fig.jpg" alt="Schematic overview of our method" />
+          </figure>
+          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+            <strong>Schematic overview of our proposed framework.</strong><br/>
+            Let \(\theta^*\) denote a trained diffusion model for which we aim to credit data contributors, and \(\tilde{\theta}^*\) represent a pruned model that approximates \(\theta^*\). After fine-tuning the pruned model on data subsets (yielding \(\tilde{\theta}^{\text{ft}}\)), we re-run inference and evaluate global properties \(\mathcal{F}\) to estimate Shapley values.
+          </h2>
+        </div>
+
+        <!-- Top Contributors Figure -->
+        <div class="item">
+          <figure class="image" style="margin: 0 auto; max-width: 80%;">
+            <img src="static/images/top_contributors.jpg" alt="Top contributors and generated images" />
+          </figure>
+          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+            <strong>Top contributors and their generated image effects.</strong><br/>
+            Top-ranked contributors (above) across datasets show distinct contributions: e.g., high-quality labeling in CIFAR-20 or diverse demographics in CelebA-HQ. Below: Stable Diffusion outputs above/below the 90th percentile of aesthetic score when excluding vs. including top contributors.
+          </h2>
+        </div>
+
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/top_contributors.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-           Top contributors and their corresponding training images for each dataset (top). Pairs of generated images above and below the 90th percentile of aesthetic score from Stable Diffusion models LoRA-finetuned under three conditions: excluding the data from the top 40\% of artists, using the data from all the artists, and including only the data from the top 60\% of artists (bottom).     
-        </h2>
-      </div>
+    </div>
   </div>
-</div>
-</div>
 </section>
+
 <!-- End image carousel -->
 
 
@@ -169,7 +176,6 @@
     <em>Figure: Linear Datamodeling Score (LDS) comparison across baseline methods and our approach, sparsified-FT Shapley, on CIFAR-20, CelebA-HQ, and ArtBench (Post-Impressionism). Mean ± 95% confidence interval over 3 runs, evaluated at α = 0.5.</em>
   </figcaption>
 </figure>
-
 
 <figure style="text-align: center; margin-top: 2rem;">
   <img src="static/images/lds_evaluation.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
@@ -184,14 +190,7 @@
     <em>Relative percentage changes in global properties, comparing the original fully trained models to models retrained after removing the top 40\% contributors (top) and including only the top contributors (bottom), as identified by various attribution methods.</em>
   </figcaption>
 </figure>
-
-<figure style="text-align: center; margin-top: 2rem;">
-  <img src="static/images/top_contributors.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
-  <figcaption class="has-text-centered">
-    <em>Top contributors and their corresponding training images for each dataset (top). Pairs of generated images above and below the 90th percentile of aesthetic score from Stable Diffusion models LoRA-finetuned under three conditions: excluding the data from the top 40\% of artists, using the data from all the artists, and including only the data from the top 60\% of artists (bottom).</em>
-  </figcaption>
-</figure>
-
+  
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">

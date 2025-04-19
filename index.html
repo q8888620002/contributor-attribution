@@ -176,29 +176,18 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            We propose a scalable framework to estimate Shapley values for data contributors of diffusion models. Instead of retraining a full model for each data subset, we introduce <strong>sparsified fine-tuning</strong>: a trained model is pruned to create a sparse proxy, which is then fine-tuned on contributor-specific subsets. We re-run inference and evaluate global model properties to estimate Shapley values efficiently.
+            We propose a scalable framework for estimating Shapley values to quantify the contribution of training data to diffusion models. Rather than retraining a full model for each subset, we introduce <strong>sparsified fine-tuning</strong>: a pretrained model is pruned to form a sparse proxy, which is then fine-tuned on subsets sampled from the Shapley distribution. Inference is performed on each fine-tuned model to evaluate global properties, enabling efficient Shapley value estimation.
           </p>
-
           <p>
-            Our approach is backed by theoretical guarantees. Let \(\mathcal{F}(\theta)\) be a Lipschitz-continuous global property evaluated on model parameters \(\theta\). Let \(\theta^*\) be the model trained on a full dataset, and \(\tilde{\theta}_T^*\) the pruned model fine-tuned for \(T\) steps. We prove:
+            We further show that this procedure yields a bounded approximation error. Specifically, let \(\beta^*\) denote the true Shapley value vector and \(\tilde{\beta}_k^{\mathrm{ft}}\) its estimate using sparsified fine-tuned models after \(k\) steps. Then:
           </p>
-
-          <div style="margin: 1.5rem 0; font-size: 0.95em;">
-            <p style="font-style: italic;">
-              <strong>Proposition 1.</strong> Assume \(\mathcal{L}(\theta)\) is convex and \(L\)-Lipschitz, and that \(\mathcal{F}(\theta)\) is \(C\)-Lipschitz. If \(\tilde{\theta}_T^*\) is obtained via projected gradient descent on the pruned parameter space with step size \(\eta\), then:
-            </p>
-            <p style="text-align: center; margin: 1rem 0;">
-              \[
-              \left| \mathcal{F}(\theta^*) - \mathcal{F}(\tilde{\theta}_T^*) \right| \leq C \left( \sqrt{ \frac{2L^2 \eta}{T} } + \epsilon \right),
-              \]
-            </p>
-            <p style="font-style: italic;">
-              where \(\epsilon\) is the approximation error from pruning. This implies the global property is well preserved with sufficient fine-tuning steps \(T\), enabling accurate Shapley value estimation from \(\tilde{\theta}_T^*\).
-            </p>
-          </div>
-
+          <p style="text-align: center;">
+            \[
+            \mathbb{E} \left[ \left\| \tilde{\beta}_k^{\mathrm{ft}} - \beta^* \right\|_2 \right] \leq 2 \sqrt{n} C \quad \text{as } k \to \infty,
+            \]
+          </p>
           <p>
-            This result provides the first formal guarantee that pruning followed by fine-tuning can approximate full retraining for contributor attribution in generative models. It enables orders-of-magnitude reduction in runtime while maintaining accuracy in estimating data value.
+            where \(n\) is the number of contributors and \(C\) is a constant reflecting smoothness and loss properties. This result provides theoretical justification for using fine-tuned sparse models in place of full retraining. For details, see <a href="URL_TO_APPENDIX" target="_blank">Appendix A</a>.
           </p>
         </div>
       </div>

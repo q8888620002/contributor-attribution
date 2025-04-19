@@ -146,7 +146,7 @@
         <img src="static/images/concept_fig.jpg" alt="Schematic overview of our method" style="width: 100%; height: auto;" />
         <p class="is-size-6" style="margin-top: 1rem;">
           <strong>Schematic overview of our proposed framework.</strong><br/>
-          Let \(\theta^*\) denote a trained diffusion model for which we aim to credit data contributors, and \(\tilde{\theta}^*\) represent a pruned model that approximates \(\theta^*\). After fine-tuning the pruned model on data subsets (yielding \(\tilde{\theta}^{\text{ft}}\)), we re-run inference and evaluate global properties \(\mathcal{F}\) to estimate Shapley values.
+          Let \(\theta^*\) denote a trained diffusion model for which we aim to credit data contributors, and \(\tilde{\theta}^*\) represent a pruned model that approximates \(\theta^*\). After fine-tuning the pruned model on data subsets (yielding \(\tilde{\theta}^{\text{ft}}\)), we re-run inference and evaluate global model \(\mathcal{F}\) to estimate Shapley values.
         </p>
       </div>
     </div>
@@ -156,7 +156,7 @@
         <div class="carousel-item-wrapper center-text wrapper-60">
         <img src="static/images/top_contributors.jpg" alt="Top contributors and generated images" style="width: 100%; height: auto;" />
         <p class="is-size-6" style="margin-top: 1rem;">
-          <strong>Top contributors and their generated image effects.</strong><br/>
+          <strong>Top contributors and generated images after remove or include them.</strong><br/>
           <em>Top-ranked contributors (above) across datasets show distinct contributions: e.g., high-quality labeling in CIFAR-20 or diverse demographics in CelebA-HQ. Below: Stable Diffusion outputs above/below the 90th percentile of aesthetic score when excluding vs. including top contributors. </em>
         </p>
       </div>

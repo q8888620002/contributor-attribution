@@ -2,7 +2,31 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.carousel-item-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
+.center-text {
+  text-align: center;
+}
+
+.wrapper-70 {
+  max-width: 70%;
+}
+
+.wrapper-60 {
+  max-width: 60%;
+}
+
+/* On small screens, override to full width */
+@media screen and (max-width: 768px) {
+  .wrapper-70,
+  .wrapper-60 {
+    max-width: 100% !important;
+  }
+}
 .footer .icon-link {
     font-size: 25px;
     color: #000;

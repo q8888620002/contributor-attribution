@@ -211,7 +211,6 @@
           <p>
             As shown below, our method achieves significantly higher Linear Datamodeling Scores (LDS) than baselines such as TRAK, influence functions, and pixel similarity—demonstrating more faithful alignment with global model behavior.
             Additionally, sparsified fine-tuning reduces attribution runtime by up to 18× while maintaining high attribution accuracy, enabling evaluation over more Shapley subsets under the same compute budget.
-            Finally, counterfactual experiments confirm that the top contributors identified by our method have a stronger impact on model performance.
           </p>
 
           <!-- RESULTS TABLE AS FIGURE -->
@@ -225,7 +224,7 @@
 
 
           <p>
-            <strong>Figure 2</strong> highlights how our method compares under realistic computational constraints. Given the same budget (defined as the time required to retrain and evaluate one full model), sparsified fine-tuning achieves significantly better LDS performance than standard fine-tuning or full retraining. This demonstrates that sparsified-FT enables broader coverage of the Shapley sampling space, resulting in more faithful contributor valuation under limited resources.
+            <strong>Figure 2</strong> highlights how our method compares under computational constraints. Given the same budget (defined as the time required to retrain and evaluate one full model), sparsified fine-tuning achieves significantly better LDS performance than standard fine-tuning or full retraining. This demonstrates that sparsified-FT enables broader coverage of the Shapley sampling space, resulting in more faithful contributor valuation under limited resources.
           </p>
           <!-- EFFICIENCY VS ACCURACY -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
@@ -237,8 +236,7 @@
           </div>
 
           <p>
-            <strong>Figure 3</strong> presents a counterfactual evaluation that measures the causal effect of contributor subsets on model performance. We compare model outputs after removing or retaining top contributors ranked by different attribution methods. Models trained without top contributors (top row) show degraded quality or diversity, while models trained using only the top contributors (bottom row) perform better across global properties. Our method leads to the strongest effect sizes in both directions, confirming it identifies the most impactful training data.
-          </p>
+              We perform counterfactual evaluations by removing or retaining top-ranked contributors. Removing contributors identified by our method leads to the largest performance drop across datasets (e.g., −23.2% on CIFAR-20), while retaining them yields the highest gains (e.g., +20.0% on CelebA-HQ). Compared to baselines like CLIP similarity, LOO, and influence functions, our method consistently identifies the most impactful data.          </p>
           <!-- COUNTERFACTUAL IMPACT -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
             <img src="static/images/counterfactual_results.jpg" alt="Counterfactual Attribution Results"

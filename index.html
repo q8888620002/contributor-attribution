@@ -67,7 +67,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Paul G. Allen School of Computer Science & Engineering,University of Washington<br>ICLR 2025</span>
+                    <span class="author-block">Paul G. Allen School of Computer Science & Engineering<br>University of Washington<br>ICLR 2025</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -165,23 +165,23 @@
 
 
 <figure style="text-align: center; margin-top: 2rem;">
-  <img src="static/images/conterfactual_results.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
+  <img src="static/images/lds_evaluation.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
   <figcaption class="has-text-centered">
-    <em>Figure: Linear Datamodeling Score (LDS) comparison across baseline methods and our approach, sparsified-FT Shapley, on CIFAR-20, CelebA-HQ, and ArtBench (Post-Impressionism). Mean ± 95% confidence interval over 3 runs, evaluated at α = 0.5.</em>
+    <em>Comparison of LDS (\%) with $\alpha = 0.5$ among Shapley values estimated with sparsified fine-tuning (FT), fine-tuning (FT), and retraining under the same computational budgets (1 unit $=$ runtime to retrain and run inference on a full model). </em>
   </figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top: 2rem;">
-  <img src="static/images/lds_evaluation.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
+  <img src="static/images/counterfactual_results.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
   <figcaption class="has-text-centered">
-    <em>Figure: Linear Datamodeling Score (LDS) comparison across baseline methods and our approach, sparsified-FT Shapley, on CIFAR-20, CelebA-HQ, and ArtBench (Post-Impressionism). Mean ± 95% confidence interval over 3 runs, evaluated at α = 0.5.</em>
+    <em>Relative percentage changes in global properties, comparing the original fully trained models to models retrained after removing the top 40\% contributors (top) and including only the top contributors (bottom), as identified by various attribution methods.</em>
   </figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top: 2rem;">
   <img src="static/images/top_contributors.jpg" alt="LDS Results Table" style="max-width: 100%; height: auto;">
   <figcaption class="has-text-centered">
-    <em>Figure: Linear Datamodeling Score (LDS) comparison across baseline methods and our approach, sparsified-FT Shapley, on CIFAR-20, CelebA-HQ, and ArtBench (Post-Impressionism). Mean ± 95% confidence interval over 3 runs, evaluated at α = 0.5.</em>
+    <em>Top contributors and their corresponding training images for each dataset (top). Pairs of generated images above and below the 90th percentile of aesthetic score from Stable Diffusion models LoRA-finetuned under three conditions: excluding the data from the top 40\% of artists, using the data from all the artists, and including only the data from the top 60\% of artists (bottom).</em>
   </figcaption>
 </figure>
 
